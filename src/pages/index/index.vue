@@ -9,7 +9,7 @@
   >
     首页
   </view>
-
+  <uni-hello></uni-hello>
   <view class="bg"></view>
 </template>
 
@@ -19,6 +19,7 @@ import { onLoad } from "@dcloudio/uni-app";
 const navBarHeight = ref(0);
 const navBarTop = ref(0);
 const statusBarHeight = ref(0);
+
 onLoad(() => {
   statusBarHeight.value = uni.getSystemInfoSync().statusBarHeight;
   const menuButtonInfo = uni.getMenuButtonBoundingClientRect();

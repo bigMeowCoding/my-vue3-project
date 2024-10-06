@@ -16,5 +16,11 @@
     "navigationBarTitleText": "uni-app",
     "navigationBarBackgroundColor": "#FF0000",
     "backgroundColor": "#FFFF00"
+  },
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      "^uni-(.*)": "@/components/uni-$1.vue"
+    }
   }
 }
