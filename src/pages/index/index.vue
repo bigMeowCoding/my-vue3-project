@@ -10,7 +10,7 @@
     首页
   </view>
   <uni-hello></uni-hello>
-  <view class="bg"></view>
+  <view class="bg" @click="navigateToPageA"></view>
 </template>
 
 <script setup>
@@ -27,6 +27,12 @@ onLoad(() => {
   navBarHeight.value = menuButtonInfo.height;
   navBarTop.value = menuButtonInfo.top - statusBarHeight.value;
 });
+
+const navigateToPageA = () => {
+  uni.navigateTo({
+    url: "/pagesA/index/index",
+  });
+};
 </script>
 
 <style scoped>

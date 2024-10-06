@@ -50,5 +50,15 @@
         "selectedIconPath": "static/images/selected.png"
       }
     ]
-  }
+  },
+  "subPackages": [
+    {
+      "root": "pagesA",
+      "pages": [
+        {
+          "path": "index/index"
+        }
+      ]
+    }
+  ]
 }
