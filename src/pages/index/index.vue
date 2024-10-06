@@ -1,71 +1,57 @@
 <template>
-  <view class="content">
-  图片预览：<image :src="showImage" class="logo" />
-
-    <button type="default" @click="uploadImage">
-      上传图片
-    </button>
-    <button type="default" @click="abortUpload">
-      终止上传
-    </button>
+  <view class="status_bar" :style="{ height: statusBarHeight + 'px' }"> </view>
+  <view
+    class="nav_bar"
+    :style="{
+      paddingTop: navBarTop + 'px',
+      height: navBarHeight + 'px',
+    }"
+  >
+    首页
   </view>
+
+  <view class="bg"></view>
 </template>
 
 <script setup>
-function uploadImage() {
-  uni.chooseImage({
-    count: 1,
-    success: function (res) {
-      uni.uploadFile({
-        url: 'http://localhost:3000/upload',
-        filePath: res.tempFilePaths[0],
-        name: 'file',
-        success: function (res) {
-          console.log(res)
-        }
-      })
-    }
-  })
-}
-function abortUpload() {
-  uni.request({
-    url: 'https://httpbin.org/delay/3',
-    success: function (res) {
-      console.log(res)
-    }
-  })
-}
-function handleClick() {
-  uni.navigateTo({
-    url: '/pages/list/list'
-  })
-}
+import { ref } from "vue";
+import { onLoad } from "@dcloudio/uni-app";
+const navBarHeight = ref(0);
+const navBarTop = ref(0);
+const statusBarHeight = ref(0);
+onLoad(() => {
+  statusBarHeight.value = uni.getSystemInfoSync().statusBarHeight;
+  const menuButtonInfo = uni.getMenuButtonBoundingClientRect();
+  console.log("onLoad", menuButtonInfo, statusBarHeight);
+  navBarHeight.value = menuButtonInfo.height;
+  navBarTop.value = menuButtonInfo.top - statusBarHeight.value;
+});
 </script>
 
-<style>
-.content {
+<style scoped>
+.status_bar {
+  height: var(--status-bar-height);
+  width: 100%;
+  background-color: aquamarine;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.logo {
-  height: 200rpx;
-  width: 200rpx;
-  margin-top: 200rpx;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 50rpx;
-}
-
-.text-area {
+.nav_bar {
+  height: 80rpx;
+  width: 100%;
+  background-color: aquamarine;
   display: flex;
+  align-items: center;
   justify-content: center;
 }
-
-.title {
-  font-size: 36rpx;
-  color: #8f8f94;
+.bg {
+  height: 100vh;
+  width: 100vw;
+  background-color: red;
+  background: url("https://pic.rmb.bdstatic.com/bjh/down/65f41fc4292ba86eec41e268c5487e99.jpeg")
+    no-repeat;
+  background-size: contain;
 }
 </style>
