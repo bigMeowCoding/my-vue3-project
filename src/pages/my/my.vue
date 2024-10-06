@@ -1,5 +1,5 @@
 <template>
-  <text> list </text>
+  <text> my </text>
 </template>
 <script setup></script>
 

@@ -9,6 +9,9 @@
     },
     {
       "path": "pages/list/list"
+    },
+    {
+      "path": "pages/my/my"
     }
   ],
   "globalStyle": {
@@ -22,5 +25,27 @@
     "custom": {
       "^uni-(.*)": "@/components/uni-$1.vue"
     }
+  },
+  "tabBar": {
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/index/index",
+        "iconPath": "static/images/1.png",
+        "selectedIconPath": "static/images/selected.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/my/my",
+        "iconPath": "static/images/2.jpeg",
+        "selectedIconPath": "static/images/selected.png"
+      },
+      {
+        "text": "列表",
+        "pagePath": "pages/list/list",
+        "iconPath": "static/images/3.jpeg",
+        "selectedIconPath": "static/images/selected.png"
+      }
+    ]
   }
 }
