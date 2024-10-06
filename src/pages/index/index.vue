@@ -21,16 +21,19 @@ const navBarTop = ref(0);
 const statusBarHeight = ref(0);
 
 onLoad(() => {
+  console.log("pages/index,页面栈", getCurrentPages());
+  // #ifdef mp-weixin
+
   statusBarHeight.value = uni.getSystemInfoSync().statusBarHeight;
   const menuButtonInfo = uni.getMenuButtonBoundingClientRect();
-  console.log("onLoad", menuButtonInfo, statusBarHeight);
   navBarHeight.value = menuButtonInfo.height;
   navBarTop.value = menuButtonInfo.top - statusBarHeight.value;
+  // #endif
 });
 
 const navigateToPageA = () => {
   uni.navigateTo({
-    url: "/pagesA/index/index",
+    url: "/pagesA/index/index?age=1&name=张三",
   });
 };
 </script>
