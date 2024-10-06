@@ -1,6 +1,9 @@
 <template>
-  <text> list </text>
+  <view> list </view>
+
 </template>
 <script setup></script>
 
-<style scoped></style>
+<style scoped>
+
+</style>
