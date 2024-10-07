@@ -22,7 +22,7 @@ const statusBarHeight = ref(0);
 
 onLoad(() => {
   console.log("pages/index,页面栈", getCurrentPages());
-  // #ifdef mp-weixin
+  // #ifdef MP-WEIXIN
 
   statusBarHeight.value = uni.getSystemInfoSync().statusBarHeight;
   const menuButtonInfo = uni.getMenuButtonBoundingClientRect();
