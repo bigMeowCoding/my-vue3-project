@@ -12,6 +12,9 @@
     },
     {
       "path": "pages/my/my"
+    },
+    {
+      "path": "pages/map/map"
     }
   ],
   "globalStyle": {
