@@ -20,6 +20,7 @@ const navBarHeight = ref(0);
 const navBarTop = ref(0);
 const statusBarHeight = ref(0);
 
+
 onLoad(() => {
   console.log("pages/index,页面栈", getCurrentPages());
   // #ifdef MP-WEIXIN
