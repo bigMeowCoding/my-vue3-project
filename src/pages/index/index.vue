@@ -12,7 +12,9 @@
   <!-- <uni-hello></uni-hello> -->
   <!-- <view class="bg" @click="navigateToPageA"></view> -->
   <!-- <uni-video></uni-video> -->
-  <uni-clipboard></uni-clipboard>
+  <!-- <uni-clipboard></uni-clipboard> -->
+  <uni-scancode></uni-scancode>
+  <!-- <button @click="callPhone">拨打电话</button> -->
 </template>
 
 <script setup>
@@ -40,7 +42,11 @@ onLoad(() => {
   navBarTop.value = menuButtonInfo.top - statusBarHeight.value;
   // #endif
 });
-
+function callPhone() {
+  uni.makePhoneCall({
+    phoneNumber: "15828042763",
+  });
+}
 const navigateToPageA = () => {
   uni.navigateTo({
     url: "/pagesA/index/index?age=1&name=张三",
