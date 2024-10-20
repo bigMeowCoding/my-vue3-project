@@ -46,16 +46,22 @@ onLoad(() => {
   uni.showNavigationBarLoading();
   setTimeout(() => {
     uni.hideNavigationBarLoading();
+    // uni.hideTabBar({
+    //   animation: true,
+    // });
   }, 2000);
-  uni.setTabBarItem({
-    index: 0,
-    text: "affff",
+  // uni.setTabBarBadge({
+  //   index: 0,
+  //   text: "10",
+  // });
+  uni.showTabBarRedDot({
+    index: 2,
   });
-  uni.setTabBarStyle({
-    color: "#ffffff",
-    selectedColor: "#000000",
-    backgroundColor: "#ff3333",
-  });
+  // uni.setTabBarStyle({
+  //   color: "#ffffff",
+  //   selectedColor: "#000000",
+  //   backgroundColor: "#ff3333",
+  // });
   console.log("pages/list,页面栈", getCurrentPages());
 });
 onReady(() => {
