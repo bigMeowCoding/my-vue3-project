@@ -23,6 +23,14 @@ const statusBarHeight = ref(0);
 
 onLoad(() => {
   console.log("pages/index,页面栈", getCurrentPages());
+  uni.getNetworkType({
+    success: (res) => {
+      console.log("网络类型", res);
+    },
+  });
+  uni.onNetworkStatusChange((res) => {
+    console.log("网络状态变化", res);
+  });
   // #ifdef MP-WEIXIN
 
   statusBarHeight.value = uni.getSystemInfoSync().statusBarHeight;
