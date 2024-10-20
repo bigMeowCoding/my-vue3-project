@@ -11,7 +11,8 @@
   </view>
   <!-- <uni-hello></uni-hello> -->
   <!-- <view class="bg" @click="navigateToPageA"></view> -->
-  <uni-video></uni-video>
+  <!-- <uni-video></uni-video> -->
+  <uni-clipboard></uni-clipboard>
 </template>
 
 <script setup>
