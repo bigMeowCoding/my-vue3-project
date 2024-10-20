@@ -9,8 +9,9 @@
   >
     首页
   </view>
-  <uni-hello></uni-hello>
-  <view class="bg" @click="navigateToPageA"></view>
+  <!-- <uni-hello></uni-hello> -->
+  <!-- <view class="bg" @click="navigateToPageA"></view> -->
+  <uni-video></uni-video>
 </template>
 
 <script setup>
@@ -19,7 +20,6 @@ import { onLoad } from "@dcloudio/uni-app";
 const navBarHeight = ref(0);
 const navBarTop = ref(0);
 const statusBarHeight = ref(0);
-
 
 onLoad(() => {
   console.log("pages/index,页面栈", getCurrentPages());
