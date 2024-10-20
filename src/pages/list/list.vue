@@ -11,7 +11,7 @@
   </view>
 </template>
 <script setup>
-import { onLoad } from "@dcloudio/uni-app";
+import { onLoad, onReady } from "@dcloudio/uni-app";
 import { ref } from "vue";
 const test = ref("");
 const gender = ref();
@@ -34,16 +34,39 @@ onLoad(() => {
   //     console.log("res", res);
   //   },
   // });
-  uni
-    .request({
-      url: "http://127.0.0.1:8888/test",
-      method: "POST",
-    })
-    .then((res) => {
-      console.log("res", res);
-      test.value = res.data;
-    });
+  // uni
+  //   .request({
+  //     url: "http://127.0.0.1:8888/test",
+  //     method: "POST",
+  //   })
+  //   .then((res) => {
+  //     console.log("res", res);
+  //     test.value = res.data;
+  //   });
+  uni.showNavigationBarLoading();
+  setTimeout(() => {
+    uni.hideNavigationBarLoading();
+  }, 2000);
+  uni.setTabBarItem({
+    index: 0,
+    text: "affff",
+  });
+  uni.setTabBarStyle({
+    color: "#ffffff",
+    selectedColor: "#000000",
+    backgroundColor: "#ff3333",
+  });
   console.log("pages/list,页面栈", getCurrentPages());
+});
+onReady(() => {
+  console.log("onReady");
+  uni.setNavigationBarTitle({
+    title: "修改性别",
+  });
+  // uni.setNavigationBarColor({
+  //   // frontColor: "#000000", // 设置字体为红色
+  //   // backgroundColor: "#ffffff",
+  // });
 });
 const showGender = () => {
   uni.showActionSheet({
@@ -55,4 +78,8 @@ const showGender = () => {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.a {
+  color: rgb(158, 1, 1);
+}
+</style>
