@@ -6,6 +6,7 @@
 </template>
 <script setup>
 import { ref, reactive, onMounted } from "vue";
+import { onPullDownRefresh } from "@dcloudio/uni-app";
 
 const animationData = ref({});
 let animation = null;
@@ -16,6 +17,12 @@ const animationConfig = reactive({
   timingFunction: "ease",
 });
 
+onPullDownRefresh(() => {
+  console.log("onPullDownRefresh");
+  setTimeout(() => {
+    uni.stopPullDownRefresh();
+  });
+});
 onMounted(() => {
   animation = uni.createAnimation(animationConfig);
   performInitialAnimation();
