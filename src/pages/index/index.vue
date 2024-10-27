@@ -15,7 +15,7 @@
 <!--   <uni-clipboard></uni-clipboard> -->
 <!--  <uni-scancode></uni-scancode>-->
   <!-- <button @click="callPhone">拨打电话</button> -->
- <uni-ani></uni-ani>
+ <uni-auth></uni-auth>
 </template>
 
 <script setup>
