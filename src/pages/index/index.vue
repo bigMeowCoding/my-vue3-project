@@ -11,10 +11,11 @@
   </view>
   <!-- <uni-hello></uni-hello> -->
   <!-- <view class="bg" @click="navigateToPageA"></view> -->
-  <!-- <uni-video></uni-video> -->
-  <!-- <uni-clipboard></uni-clipboard> -->
-  <uni-scancode></uni-scancode>
+<!--   <uni-video></uni-video>-->
+<!--   <uni-clipboard></uni-clipboard> -->
+<!--  <uni-scancode></uni-scancode>-->
   <!-- <button @click="callPhone">拨打电话</button> -->
+ <uni-ani></uni-ani>
 </template>
 
 <script setup>
@@ -23,7 +24,11 @@ import { onLoad } from "@dcloudio/uni-app";
 const navBarHeight = ref(0);
 const navBarTop = ref(0);
 const statusBarHeight = ref(0);
-
+/**
+ * 生命周期函数--监听页面加载
+ * 在该函数中，我们获取页面栈、初始化网络状态监听、
+ * 并针对微信小程序设置导航栏和状态栏的高度信息。
+ */
 onLoad(() => {
   console.log("pages/index,页面栈", getCurrentPages());
   uni.getNetworkType({

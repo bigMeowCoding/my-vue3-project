@@ -76,6 +76,9 @@ devDependencies:
   '@vue/runtime-core':
     specifier: ^3.5.5
     version: 3.5.5
+  prettier:
+    specifier: ^3.3.3
+    version: 3.3.3
   vite:
     specifier: 5.2.8
     version: 5.2.8(terser@5.32.0)
@@ -5856,6 +5859,12 @@ packages:
       nanoid: 3.3.7
       picocolors: 1.1.0
       source-map-js: 1.2.1
+
+  /prettier@3.3.3:
+    resolution: {integrity: sha512-i2tDNA0O5IrMO757lfrdQZCc2jPNDVntV0m/+4whiDfWaTKfMNgR7Qz0NAeGz/nRqF4m5/6CLzbP4/liHt12Ew==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dev: true
 
   /pretty-format@27.5.1:
     resolution: {integrity: sha512-Qb1gy5OrP5+zDf2Bvnzdl3jsTf1qXVMazbvCoKhtKqVs4/YK4ozX4gKQJJVyNe+cajNPn0KoC0MC3FUmaHWEmQ==}
